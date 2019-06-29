@@ -14,6 +14,17 @@
 		8D8073AE22C7993B00C4262E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D8073AD22C7993B00C4262E /* Preview Assets.xcassets */; };
 		8D8073B122C7993B00C4262E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D8073AF22C7993B00C4262E /* LaunchScreen.storyboard */; };
 		8D8073BC22C7993B00C4262E /* handeskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8073BB22C7993B00C4262E /* handeskTests.swift */; };
+		8D8073C822C79C7C00C4262E /* TicketRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8073C722C79C7C00C4262E /* TicketRow.swift */; };
+		8D8073CB22C79C9E00C4262E /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8073CA22C79C9E00C4262E /* Ticket.swift */; };
+		8D8073CD22C79F0F00C4262E /* TicketComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8073CC22C79F0F00C4262E /* TicketComment.swift */; };
+		8DCAD2CD22C7A47200CE90A2 /* TicketsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCAD2CC22C7A47200CE90A2 /* TicketsList.swift */; };
+		8DCAD2CF22C7A74D00CE90A2 /* TicketDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCAD2CE22C7A74D00CE90A2 /* TicketDetail.swift */; };
+		8DCAD2D122C7ADD900CE90A2 /* TicketStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCAD2D022C7ADD900CE90A2 /* TicketStatus.swift */; };
+		8DCAD2D322C7AFD300CE90A2 /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCAD2D222C7AFD300CE90A2 /* StatusView.swift */; };
+		8DCAD2D522C7B17100CE90A2 /* PriorityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCAD2D422C7B17100CE90A2 /* PriorityView.swift */; };
+		8DCAD2D722C7B4C000CE90A2 /* Tickets.json in Resources */ = {isa = PBXBuildFile; fileRef = 8DCAD2D622C7B4C000CE90A2 /* Tickets.json */; };
+		8DCAD2DA22C7BA0500CE90A2 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCAD2D922C7BA0500CE90A2 /* Extensions.swift */; };
+		8DCAD2DD22C7BCF300CE90A2 /* Requester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCAD2DC22C7BCF300CE90A2 /* Requester.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +49,17 @@
 		8D8073B722C7993B00C4262E /* handeskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = handeskTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D8073BB22C7993B00C4262E /* handeskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = handeskTests.swift; sourceTree = "<group>"; };
 		8D8073BD22C7993B00C4262E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D8073C722C79C7C00C4262E /* TicketRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketRow.swift; sourceTree = "<group>"; };
+		8D8073CA22C79C9E00C4262E /* Ticket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
+		8D8073CC22C79F0F00C4262E /* TicketComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketComment.swift; sourceTree = "<group>"; };
+		8DCAD2CC22C7A47200CE90A2 /* TicketsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketsList.swift; sourceTree = "<group>"; };
+		8DCAD2CE22C7A74D00CE90A2 /* TicketDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketDetail.swift; sourceTree = "<group>"; };
+		8DCAD2D022C7ADD900CE90A2 /* TicketStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketStatus.swift; sourceTree = "<group>"; };
+		8DCAD2D222C7AFD300CE90A2 /* StatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
+		8DCAD2D422C7B17100CE90A2 /* PriorityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityView.swift; sourceTree = "<group>"; };
+		8DCAD2D622C7B4C000CE90A2 /* Tickets.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Tickets.json; sourceTree = "<group>"; };
+		8DCAD2D922C7BA0500CE90A2 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		8DCAD2DC22C7BCF300CE90A2 /* Requester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requester.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +101,9 @@
 		8D8073A322C7993900C4262E /* handesk */ = {
 			isa = PBXGroup;
 			children = (
+				8DCAD2D822C7B9F600CE90A2 /* Helpers */,
+				8D8073C922C79C9200C4262E /* Models */,
+				8D8073C622C79C6B00C4262E /* Views */,
 				8D8073A422C7993900C4262E /* AppDelegate.swift */,
 				8D8073A622C7993900C4262E /* SceneDelegate.swift */,
 				8D8073A822C7993900C4262E /* ContentView.swift */,
@@ -94,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				8D8073AD22C7993B00C4262E /* Preview Assets.xcassets */,
+				8DCAD2D622C7B4C000CE90A2 /* Tickets.json */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -105,6 +131,37 @@
 				8D8073BD22C7993B00C4262E /* Info.plist */,
 			);
 			path = handeskTests;
+			sourceTree = "<group>";
+		};
+		8D8073C622C79C6B00C4262E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8D8073C722C79C7C00C4262E /* TicketRow.swift */,
+				8DCAD2CC22C7A47200CE90A2 /* TicketsList.swift */,
+				8DCAD2CE22C7A74D00CE90A2 /* TicketDetail.swift */,
+				8DCAD2D222C7AFD300CE90A2 /* StatusView.swift */,
+				8DCAD2D422C7B17100CE90A2 /* PriorityView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8D8073C922C79C9200C4262E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8D8073CA22C79C9E00C4262E /* Ticket.swift */,
+				8D8073CC22C79F0F00C4262E /* TicketComment.swift */,
+				8DCAD2D022C7ADD900CE90A2 /* TicketStatus.swift */,
+				8DCAD2DC22C7BCF300CE90A2 /* Requester.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8DCAD2D822C7B9F600CE90A2 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8DCAD2D922C7BA0500CE90A2 /* Extensions.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,6 +248,7 @@
 				8D8073B122C7993B00C4262E /* LaunchScreen.storyboard in Resources */,
 				8D8073AE22C7993B00C4262E /* Preview Assets.xcassets in Resources */,
 				8D8073AB22C7993B00C4262E /* Assets.xcassets in Resources */,
+				8DCAD2D722C7B4C000CE90A2 /* Tickets.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,8 +267,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D8073A522C7993900C4262E /* AppDelegate.swift in Sources */,
+				8D8073CD22C79F0F00C4262E /* TicketComment.swift in Sources */,
+				8DCAD2D122C7ADD900CE90A2 /* TicketStatus.swift in Sources */,
 				8D8073A722C7993900C4262E /* SceneDelegate.swift in Sources */,
+				8DCAD2D522C7B17100CE90A2 /* PriorityView.swift in Sources */,
+				8DCAD2D322C7AFD300CE90A2 /* StatusView.swift in Sources */,
+				8D8073CB22C79C9E00C4262E /* Ticket.swift in Sources */,
+				8DCAD2DA22C7BA0500CE90A2 /* Extensions.swift in Sources */,
+				8DCAD2CF22C7A74D00CE90A2 /* TicketDetail.swift in Sources */,
+				8DCAD2CD22C7A47200CE90A2 /* TicketsList.swift in Sources */,
+				8D8073C822C79C7C00C4262E /* TicketRow.swift in Sources */,
 				8D8073A922C7993900C4262E /* ContentView.swift in Sources */,
+				8DCAD2DD22C7BCF300CE90A2 /* Requester.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

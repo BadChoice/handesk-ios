@@ -1,23 +1,30 @@
-//
-//  ContentView.swift
-//  handesk
-//
-//  Created by Jordi Puigdellívol on 29/06/2019.
-//  Copyright © 2019 Revo Systems. All rights reserved.
-//
-
 import SwiftUI
 
 struct ContentView : View {
+    
+    let tickets: [Ticket];
+    
     var body: some View {
-        Text("Hello World")
+        NavigationView{
+            TicketsList(tickets: tickets)
+        }
     }
 }
 
 #if DEBUG
 struct ContentView_Previews : PreviewProvider {
+    
     static var previews: some View {
-        ContentView()
+        
+        let tickets = Ticket.parse(jsonFile: "Tickets")
+        
+        return ForEach(["iPhone XS", "iPhone SE", "iPhone XS Max"].identified(by: \.self)) { deviceName in
+            ContentView(
+                tickets:/*[Ticket(), Ticket(), Ticket()]*/ tickets!
+            )
+            .previewDevice(PreviewDevice(rawValue: deviceName))
+            .previewDisplayName(deviceName)
+        }
     }
 }
 #endif
