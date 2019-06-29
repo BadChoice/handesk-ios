@@ -5,7 +5,7 @@ struct PriorityView : View {
     
     var body: some View {
         HStack{
-            Text(priority.name().prefix(1))
+            Text(priority.name().prefix(1).uppercased())
                 .font(.caption)
             }
             .frame(width: 20, height:20)

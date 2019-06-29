@@ -5,7 +5,7 @@ struct StatusView : View {
     
     var body: some View {
         HStack{
-            Text(status.name().prefix(1))
+            Text(status.name().prefix(1).uppercased())
             .font(.caption)
         }
         .frame(width: 20, height:20)

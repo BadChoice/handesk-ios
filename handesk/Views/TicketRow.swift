@@ -14,7 +14,7 @@ struct TicketRow : View {
             }
             Spacer()
             HStack{
-                //Text(ticket.requester?.name ?? "").font(.footnote)
+                Text(ticket.requester?.name ?? "Unknown").font(.footnote)
                 Spacer()
                 Text(ticket.updated_at).font(.caption).color(Color.gray)
             }

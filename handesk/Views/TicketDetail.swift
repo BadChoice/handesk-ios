@@ -17,6 +17,9 @@ struct TicketDetail : View {
                 Spacer()
             }
             Text(ticket.body).font(.body).color(Color.gray)
+            /*List(ticket.comments) { comment in
+                CommentView(comment: comment)
+            }*/
         }.padding()
     }
 }

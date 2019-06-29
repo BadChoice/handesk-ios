@@ -25,6 +25,7 @@
 		8DCAD2D722C7B4C000CE90A2 /* Tickets.json in Resources */ = {isa = PBXBuildFile; fileRef = 8DCAD2D622C7B4C000CE90A2 /* Tickets.json */; };
 		8DCAD2DA22C7BA0500CE90A2 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCAD2D922C7BA0500CE90A2 /* Extensions.swift */; };
 		8DCAD2DD22C7BCF300CE90A2 /* Requester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCAD2DC22C7BCF300CE90A2 /* Requester.swift */; };
+		8DCAD2DF22C7C21100CE90A2 /* CommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCAD2DE22C7C21100CE90A2 /* CommentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		8DCAD2D622C7B4C000CE90A2 /* Tickets.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Tickets.json; sourceTree = "<group>"; };
 		8DCAD2D922C7BA0500CE90A2 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		8DCAD2DC22C7BCF300CE90A2 /* Requester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requester.swift; sourceTree = "<group>"; };
+		8DCAD2DE22C7C21100CE90A2 /* CommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 				8DCAD2CE22C7A74D00CE90A2 /* TicketDetail.swift */,
 				8DCAD2D222C7AFD300CE90A2 /* StatusView.swift */,
 				8DCAD2D422C7B17100CE90A2 /* PriorityView.swift */,
+				8DCAD2DE22C7C21100CE90A2 /* CommentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 				8DCAD2CD22C7A47200CE90A2 /* TicketsList.swift in Sources */,
 				8D8073C822C79C7C00C4262E /* TicketRow.swift in Sources */,
 				8D8073A922C7993900C4262E /* ContentView.swift in Sources */,
+				8DCAD2DF22C7C21100CE90A2 /* CommentView.swift in Sources */,
 				8DCAD2DD22C7BCF300CE90A2 /* Requester.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

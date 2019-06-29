@@ -14,7 +14,12 @@
         "deleted_at": null,
         "level": 0,
         "rating": null,
-        "ticket_type_id": null
+        "ticket_type_id": null,
+        "requester" : {
+            "id": 1,
+            "name" : "Jason Tood",
+            "email" : "jason@dc.com"
+        }
     },
     {
         "id": 51,
@@ -31,7 +36,12 @@
         "deleted_at": null,
         "level": 0,
         "rating": null,
-        "ticket_type_id": null
+        "ticket_type_id": null,
+        "requester" : {
+            "id": 2,
+            "name" : "Dick Grayson",
+            "email" : "dick@dc.com"
+        }
     },
     {
         "id": 52,
@@ -48,7 +58,12 @@
         "deleted_at": null,
         "level": 0,
         "rating": null,
-        "ticket_type_id": null
+        "ticket_type_id": null,
+        "requester" : {
+            "id": 3,
+            "name" : "Bruce Wayne",
+            "email" : "bruce@dc.com"
+        }
     },
     {
         "id": 53,
@@ -65,7 +80,12 @@
         "deleted_at": null,
         "level": 0,
         "rating": null,
-        "ticket_type_id": null
+        "ticket_type_id": null,
+        "requester" : {
+            "id": 4,
+            "name" : "Diana Petterson",
+            "email" : "diana@dc.com"
+        }
     },
     {
         "id": 54,
