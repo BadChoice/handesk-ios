@@ -2,13 +2,24 @@ import SwiftUI
 
 struct PriorityView : View {
     let priority: Priority
+    let showFull :Bool;
+    
+    init(priority:Priority){
+        self.priority = priority;
+        self.showFull = false;
+    }
+    
+    init(priority:Priority, showFull:Bool){
+        self.priority = priority;
+        self.showFull = showFull;
+    }
     
     var body: some View {
         HStack{
-            Text(priority.name().prefix(1).uppercased())
+            Text(priority.name().prefix(showFull ? 10 : 1).uppercased())
                 .font(.caption)
             }
-            .frame(width: 20, height:20)
+            .frame(width: showFull ? 60 : 20, height:20)
             .background(priority.color())
             .cornerRadius(10)
         

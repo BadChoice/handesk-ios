@@ -19,7 +19,23 @@
             "id": 1,
             "name" : "Jason Tood",
             "email" : "jason@dc.com"
-        }
+        },
+        "comments" : [
+            {
+                "id": 1,
+                "author" : "Pedro",
+                "created_at" : "2019-08-05 12:12:00",
+                "isPrivate" : true,
+                "body" : "Ok, see you tomorrow",
+            },
+            {
+                "id": 2,
+                "author" : "Julian",
+                "created_at" : "2019-08-05 12:15:00",
+                "isPrivate" : false,
+                "body" : "Hola!\n\nCuando entro en el área Informes > Reporte Z, me sale toda la información bastante bien. Me interesan mucho los turnos ya que los gastos que tenemos en el local cada día los ponemos como salidas de caja, he visto que aparece en \"Turnos\" en el propio Reporte Z. El problema es que cuando lo descargo en PDF esto ya no aparece. Creo que sería interesante que los Turnos también formasen parte del PDF con sus respectivas entradas y salidas de caja.\n\nGracias",
+            }
+        ]
     },
     {
         "id": 51,

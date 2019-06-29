@@ -3,23 +3,25 @@ import SwiftUI
 struct CommentView : View {
     let comment:TicketComment
     var body: some View {
-        VStack{
+        VStack(alignment: .leading){
             HStack{
-                Text(comment.author)
+                Text(comment.author).font(.subheadline)
                 Spacer()
                 Text(comment.created_at).font(.caption).color(Color.gray)
             }
-            Text(comment.body).font(.body)
-        }
-        .padding()
+            Text(comment.body).font(.body).lineLimit(nil)
+        }.padding()
+        .background(comment.isPrivate ? Color("Note") : Color.white)
     }
 }
 
 #if DEBUG
 struct CommentView_Previews : PreviewProvider {
     static var previews: some View {
-        CommentView(comment: TicketComment())
-            .previewLayout(.fixed(width: 300, height: 70))
+        Group{
+            CommentView(comment: TicketComment())
+            CommentView(comment: TicketComment(isPrivate:true))
+        }.previewLayout(.fixed(width: 300, height: 70))
     }
 }
 #endif

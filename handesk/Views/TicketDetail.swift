@@ -9,25 +9,27 @@ struct TicketDetail : View {
                 Text("#" + "\(ticket.id)")
                 Text(ticket.requester?.name ?? "Unkwown")
                 Spacer()
-                StatusView(status: ticket.status)
-                PriorityView(priority: ticket.priority)
+                StatusView(status: ticket.status, showFull: true)
+                PriorityView(priority: ticket.priority, showFull:true)
             }
             HStack{
                 Text(ticket.title).bold()
                 Spacer()
             }
             Text(ticket.body).font(.body).color(Color.gray)
-            /*List(ticket.comments) { comment in
+            List(ticket.comments ?? []) { comment in
                 CommentView(comment: comment)
-            }*/
+            }.edgesIgnoringSafeArea(.all)
         }.padding()
     }
 }
 
 #if DEBUG
 struct TicketDetail_Previews : PreviewProvider {
+    
     static var previews: some View {
-        TicketDetail(ticket:Ticket())
+        let tickets = Ticket.parse(jsonFile: "Tickets")
+        return TicketDetail(ticket:tickets![0])
     }
 }
 #endif
