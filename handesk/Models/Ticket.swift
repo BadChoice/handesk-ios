@@ -1,8 +1,11 @@
 import Foundation
 import SwiftUI
+import Combine
 
-
-class Ticket: Codable, Identifiable{
+class Ticket: Codable, Identifiable, BindableObject{
+    
+    var didChange = PassthroughSubject<Void, Never>()
+    
     let id: Int
     var title: String
     let body: String
@@ -17,6 +20,9 @@ class Ticket: Codable, Identifiable{
     
     var issueUrl:String?;
     
+    enum CodingKeys: String, CodingKey {
+        case id, title, body, requester_id, user_id, status, priority, ticket_type_id, requester, comments, created_at, updated_at
+    }
     
     //https://benscheirman.com/2017/06/swift-json/    
     let created_at: String //Use date
@@ -33,5 +39,14 @@ class Ticket: Codable, Identifiable{
         created_at      = "2019-08-08 12:55:55"
         updated_at      = "2019-08-08 12:55:55"
         requester       = Requester()
+    }
+    
+    func fetchComments(){
+        Api().getTicketComments(self.id) { [weak self] comments in
+            self?.comments = comments;
+            DispatchQueue.main.async {
+                self?.didChange.send(())
+            }
+        }
     }
 }

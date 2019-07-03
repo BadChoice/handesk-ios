@@ -21,7 +21,7 @@ class Agent: BindableObject, Codable {
     }
     
     func fetchTickets(){
-        Api(self.token).getTickets() { [weak self] tickets in
+        Api().getTickets() { [weak self] tickets in
             guard tickets != nil else { return }
             
             self?.tickets = tickets
@@ -37,6 +37,7 @@ class Agent: BindableObject, Codable {
             
             UserDefaults.standard.set(email, forKey: "email")
             UserDefaults.standard.set(password, forKey: "password")
+            Api.token = agent!.token
             
             completion(agent)
         }

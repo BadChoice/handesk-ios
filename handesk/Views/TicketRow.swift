@@ -30,7 +30,7 @@ struct TicketRow_Previews : PreviewProvider {
             TicketRow(ticket: Ticket())
             TicketRow(ticket: Ticket())
         }
-        .previewLayout(.fixed(width: 300, height: 70))
+        .previewLayout(.fixed(width: 360, height: 70))
     }
 }
 #endif

@@ -1,7 +1,8 @@
 import SwiftUI
 
 struct TicketDetail : View {
-    let ticket:Ticket;
+    @ObjectBinding var ticket:Ticket;
+    
     
     var body: some View {
         VStack{
@@ -21,6 +22,9 @@ struct TicketDetail : View {
                 CommentView(comment: comment)
             }.edgesIgnoringSafeArea(.all)
         }.padding()
+        .onAppear {
+            self.ticket.fetchComments()
+        }
     }
 }
 

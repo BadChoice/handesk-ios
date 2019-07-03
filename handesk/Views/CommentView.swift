@@ -5,13 +5,13 @@ struct CommentView : View {
     var body: some View {
         VStack(alignment: .leading){
             HStack{
-                Text(comment.author).font(.subheadline)
+                Text(comment.author.name).font(.subheadline)
                 Spacer()
                 Text(comment.created_at).font(.caption).color(Color.gray)
             }
             Text(comment.body).font(.body).lineLimit(nil)
         }.padding()
-        .background(comment.isPrivate ? Color("Note") : Color.white)
+        .background(comment.isNote ? Color("Note") : Color.white)
     }
 }
 
