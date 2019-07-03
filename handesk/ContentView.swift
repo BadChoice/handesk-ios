@@ -10,6 +10,7 @@ struct ContentView : View {
     var body: some View {
         NavigationView{
             TicketsList(tickets: agent.tickets ?? [])
+            .navigationBarTitle(Text("Tickets"))
         }
     }
 }

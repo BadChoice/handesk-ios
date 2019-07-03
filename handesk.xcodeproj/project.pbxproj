@@ -19,6 +19,7 @@
 		8D8073CD22C79F0F00C4262E /* TicketComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8073CC22C79F0F00C4262E /* TicketComment.swift */; };
 		8DA6AB9122CCED3900D1930A /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA6AB9022CCED3900D1930A /* Api.swift */; };
 		8DA6AB9322CCEFC100D1930A /* Agent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA6AB9222CCEFC100D1930A /* Agent.swift */; };
+		8DA6AB9522CCFEF300D1930A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA6AB9422CCFEF300D1930A /* LoginView.swift */; };
 		8DCAD2CD22C7A47200CE90A2 /* TicketsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCAD2CC22C7A47200CE90A2 /* TicketsList.swift */; };
 		8DCAD2CF22C7A74D00CE90A2 /* TicketDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCAD2CE22C7A74D00CE90A2 /* TicketDetail.swift */; };
 		8DCAD2D122C7ADD900CE90A2 /* TicketStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCAD2D022C7ADD900CE90A2 /* TicketStatus.swift */; };
@@ -59,6 +60,7 @@
 		8D8073CC22C79F0F00C4262E /* TicketComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketComment.swift; sourceTree = "<group>"; };
 		8DA6AB9022CCED3900D1930A /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		8DA6AB9222CCEFC100D1930A /* Agent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Agent.swift; sourceTree = "<group>"; };
+		8DA6AB9422CCFEF300D1930A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		8DCAD2CC22C7A47200CE90A2 /* TicketsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketsList.swift; sourceTree = "<group>"; };
 		8DCAD2CE22C7A74D00CE90A2 /* TicketDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketDetail.swift; sourceTree = "<group>"; };
 		8DCAD2D022C7ADD900CE90A2 /* TicketStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketStatus.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				8DCAD2D222C7AFD300CE90A2 /* StatusView.swift */,
 				8DCAD2D422C7B17100CE90A2 /* PriorityView.swift */,
 				8DCAD2DE22C7C21100CE90A2 /* CommentView.swift */,
+				8DA6AB9422CCFEF300D1930A /* LoginView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 				8DCAD2D322C7AFD300CE90A2 /* StatusView.swift in Sources */,
 				8D8073CB22C79C9E00C4262E /* Ticket.swift in Sources */,
 				8DCAD2DA22C7BA0500CE90A2 /* Extensions.swift in Sources */,
+				8DA6AB9522CCFEF300D1930A /* LoginView.swift in Sources */,
 				8DCAD2CF22C7A74D00CE90A2 /* TicketDetail.swift in Sources */,
 				8DCAD2CD22C7A47200CE90A2 /* TicketsList.swift in Sources */,
 				8D8073C822C79C7C00C4262E /* TicketRow.swift in Sources */,

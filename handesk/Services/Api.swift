@@ -5,6 +5,7 @@ struct ApiResponse: Codable{
     let data : [Ticket]
 }
 
+
 class Api{
     
     static let URL      = "http://handesk.test/api/agent/"
@@ -12,6 +13,20 @@ class Api{
 
     init(_ token:String){
         self.token = token;
+    }
+    
+    class func login(_ email:String, password: String, completion:(_ agent:Agent?)->Void) {
+        HTTP.POST(Api.URL, parameters: ["email" : email, "password" : password]){ response in
+            let jsonString = String(data: response.data, encoding: .utf8)
+            debugPrint(jsonString!)
+            
+            /*do{
+                //let apiResponse = try JSONDecoder().decode(ApiResponse.self, from: response.data)
+                //completion(apiResponse.data)
+            }catch {
+                print(error)
+            }*/
+        }
     }
     
     func getTickets(_ completion:@escaping(_ tickets:[Ticket]) -> Void){
@@ -27,6 +42,9 @@ class Api{
             }
         }
     }
+    
+
+    
     
     func authHeaders() -> [String: String]{
         return ["token" : self.token]

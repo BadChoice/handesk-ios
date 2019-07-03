@@ -6,6 +6,7 @@ class Agent: BindableObject {
     var didChange = PassthroughSubject<Void, Never>()
     var token     = "agent-token"
     
+    
     var tickets: [Ticket]?
     
     init(){
@@ -18,6 +19,12 @@ class Agent: BindableObject {
             DispatchQueue.main.async {
                 self?.didChange.send(())
             }
+        }
+    }
+    
+    class func login(_ email:String, password: String, completion:(_ agent:Agent?)->Void) {
+        Api.login(email, password: password) { agent in
+            
         }
     }
     
