@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,8 @@
 		8D8073C822C79C7C00C4262E /* TicketRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8073C722C79C7C00C4262E /* TicketRow.swift */; };
 		8D8073CB22C79C9E00C4262E /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8073CA22C79C9E00C4262E /* Ticket.swift */; };
 		8D8073CD22C79F0F00C4262E /* TicketComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8073CC22C79F0F00C4262E /* TicketComment.swift */; };
+		8DA6AB9122CCED3900D1930A /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA6AB9022CCED3900D1930A /* Api.swift */; };
+		8DA6AB9322CCEFC100D1930A /* Agent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA6AB9222CCEFC100D1930A /* Agent.swift */; };
 		8DCAD2CD22C7A47200CE90A2 /* TicketsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCAD2CC22C7A47200CE90A2 /* TicketsList.swift */; };
 		8DCAD2CF22C7A74D00CE90A2 /* TicketDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCAD2CE22C7A74D00CE90A2 /* TicketDetail.swift */; };
 		8DCAD2D122C7ADD900CE90A2 /* TicketStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCAD2D022C7ADD900CE90A2 /* TicketStatus.swift */; };
@@ -26,6 +28,7 @@
 		8DCAD2DA22C7BA0500CE90A2 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCAD2D922C7BA0500CE90A2 /* Extensions.swift */; };
 		8DCAD2DD22C7BCF300CE90A2 /* Requester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCAD2DC22C7BCF300CE90A2 /* Requester.swift */; };
 		8DCAD2DF22C7C21100CE90A2 /* CommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCAD2DE22C7C21100CE90A2 /* CommentView.swift */; };
+		BC0049D5517F11DCD2FD907E /* Pods_handesk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1767CDF6C723C7A1C18AFEF0 /* Pods_handesk.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1767CDF6C723C7A1C18AFEF0 /* Pods_handesk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_handesk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D8073A122C7993900C4262E /* handesk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = handesk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D8073A422C7993900C4262E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D8073A622C7993900C4262E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +57,8 @@
 		8D8073C722C79C7C00C4262E /* TicketRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketRow.swift; sourceTree = "<group>"; };
 		8D8073CA22C79C9E00C4262E /* Ticket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
 		8D8073CC22C79F0F00C4262E /* TicketComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketComment.swift; sourceTree = "<group>"; };
+		8DA6AB9022CCED3900D1930A /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		8DA6AB9222CCEFC100D1930A /* Agent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Agent.swift; sourceTree = "<group>"; };
 		8DCAD2CC22C7A47200CE90A2 /* TicketsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketsList.swift; sourceTree = "<group>"; };
 		8DCAD2CE22C7A74D00CE90A2 /* TicketDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketDetail.swift; sourceTree = "<group>"; };
 		8DCAD2D022C7ADD900CE90A2 /* TicketStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketStatus.swift; sourceTree = "<group>"; };
@@ -62,6 +68,8 @@
 		8DCAD2D922C7BA0500CE90A2 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		8DCAD2DC22C7BCF300CE90A2 /* Requester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requester.swift; sourceTree = "<group>"; };
 		8DCAD2DE22C7C21100CE90A2 /* CommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentView.swift; sourceTree = "<group>"; };
+		AFA02A139895044AF7D68C99 /* Pods-handesk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-handesk.debug.xcconfig"; path = "Target Support Files/Pods-handesk/Pods-handesk.debug.xcconfig"; sourceTree = "<group>"; };
+		EAFAD128251A21ED0E41DA6B /* Pods-handesk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-handesk.release.xcconfig"; path = "Target Support Files/Pods-handesk/Pods-handesk.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC0049D5517F11DCD2FD907E /* Pods_handesk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,12 +91,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		02AF9BEAAC614DCB173F0AC1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1767CDF6C723C7A1C18AFEF0 /* Pods_handesk.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8D80739822C7993900C4262E = {
 			isa = PBXGroup;
 			children = (
 				8D8073A322C7993900C4262E /* handesk */,
 				8D8073BA22C7993B00C4262E /* handeskTests */,
 				8D8073A222C7993900C4262E /* Products */,
+				9667BF4974EB1DD6F7CFD976 /* Pods */,
+				02AF9BEAAC614DCB173F0AC1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +122,7 @@
 		8D8073A322C7993900C4262E /* handesk */ = {
 			isa = PBXGroup;
 			children = (
+				8DA6AB8F22CCED2B00D1930A /* Services */,
 				8DCAD2D822C7B9F600CE90A2 /* Helpers */,
 				8D8073C922C79C9200C4262E /* Models */,
 				8D8073C622C79C6B00C4262E /* Views */,
@@ -151,12 +171,21 @@
 		8D8073C922C79C9200C4262E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				8DA6AB9222CCEFC100D1930A /* Agent.swift */,
 				8D8073CA22C79C9E00C4262E /* Ticket.swift */,
 				8D8073CC22C79F0F00C4262E /* TicketComment.swift */,
 				8DCAD2D022C7ADD900CE90A2 /* TicketStatus.swift */,
 				8DCAD2DC22C7BCF300CE90A2 /* Requester.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		8DA6AB8F22CCED2B00D1930A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				8DA6AB9022CCED3900D1930A /* Api.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		8DCAD2D822C7B9F600CE90A2 /* Helpers */ = {
@@ -167,6 +196,15 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		9667BF4974EB1DD6F7CFD976 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AFA02A139895044AF7D68C99 /* Pods-handesk.debug.xcconfig */,
+				EAFAD128251A21ED0E41DA6B /* Pods-handesk.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -174,9 +212,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8D8073C022C7993B00C4262E /* Build configuration list for PBXNativeTarget "handesk" */;
 			buildPhases = (
+				C54F559426CEB7B1ACF969CD /* [CP] Check Pods Manifest.lock */,
 				8D80739D22C7993900C4262E /* Sources */,
 				8D80739E22C7993900C4262E /* Frameworks */,
 				8D80739F22C7993900C4262E /* Resources */,
+				9FEA7673B4DF558A039DE2B6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -264,6 +304,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9FEA7673B4DF558A039DE2B6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-handesk/Pods-handesk-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-handesk/Pods-handesk-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-handesk/Pods-handesk-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C54F559426CEB7B1ACF969CD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-handesk-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8D80739D22C7993900C4262E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -272,7 +354,9 @@
 				8D8073A522C7993900C4262E /* AppDelegate.swift in Sources */,
 				8D8073CD22C79F0F00C4262E /* TicketComment.swift in Sources */,
 				8DCAD2D122C7ADD900CE90A2 /* TicketStatus.swift in Sources */,
+				8DA6AB9122CCED3900D1930A /* Api.swift in Sources */,
 				8D8073A722C7993900C4262E /* SceneDelegate.swift in Sources */,
+				8DA6AB9322CCEFC100D1930A /* Agent.swift in Sources */,
 				8DCAD2D522C7B17100CE90A2 /* PriorityView.swift in Sources */,
 				8DCAD2D322C7AFD300CE90A2 /* StatusView.swift in Sources */,
 				8D8073CB22C79C9E00C4262E /* Ticket.swift in Sources */,
@@ -432,6 +516,7 @@
 		};
 		8D8073C122C7993B00C4262E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AFA02A139895044AF7D68C99 /* Pods-handesk.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -452,6 +537,7 @@
 		};
 		8D8073C222C7993B00C4262E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EAFAD128251A21ED0E41DA6B /* Pods-handesk.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

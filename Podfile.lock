@@ -1,0 +1,16 @@
+PODS:
+  - SwiftHTTP (3.0.1)
+
+DEPENDENCIES:
+  - SwiftHTTP
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - SwiftHTTP
+
+SPEC CHECKSUMS:
+  SwiftHTTP: e94f1aa8cde58637dcc0100f6349de31a3337fde
+
+PODFILE CHECKSUM: 54c7f0c7c7306844595237c8078b80488d4bb8bc
+
+COCOAPODS: 1.7.3
