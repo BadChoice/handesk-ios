@@ -23,6 +23,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         if let windowScene = scene as? UIWindowScene {
             
+            //let tickets = Ticket.parse(jsonFile: "Tickets")
+            
             let window = UIWindow(windowScene: windowScene)
             
             Agent.doSavedLogin { agent in

@@ -21,7 +21,7 @@ struct TicketDetail : View {
             List(ticket.comments ?? []) { comment in
                 CommentView(comment: comment)
             }.edgesIgnoringSafeArea(.all)
-        }.padding()
+        }.padding(.horizontal)
         .onAppear {
             self.ticket.fetchComments()
         }

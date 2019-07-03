@@ -5,6 +5,7 @@ struct CommentView : View {
     var body: some View {
         VStack(alignment: .leading){
             HStack{
+                Image("Avatar").resizable().aspectRatio(contentMode: .fit)
                 Text(comment.author.name).font(.subheadline)
                 Spacer()
                 Text(comment.created_at).font(.caption).color(Color.gray)
