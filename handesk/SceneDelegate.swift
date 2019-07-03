@@ -21,13 +21,23 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         // Use a UIHostingController as window root view controller
         
-        let tickets = Ticket.parse(jsonFile: "Tickets")
-        
         if let windowScene = scene as? UIWindowScene {
+            
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = UIHostingController(rootView: ContentView(tickets:tickets!))
-            self.window = window
-            window.makeKeyAndVisible()
+            
+            Agent.doSavedLogin { agent in
+                DispatchQueue.main.async {
+                    if (agent == nil){
+                        window.rootViewController = UIHostingController(rootView: LoginView())
+                    }
+                    else{
+                        agent?.fetchTickets()
+                        window.rootViewController = UIHostingController(rootView: ContentView(agent:agent!))
+                    }
+                    self.window = window
+                    window.makeKeyAndVisible()
+                }
+            }
         }
     }
 

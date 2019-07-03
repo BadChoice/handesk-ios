@@ -5,7 +5,9 @@ struct ContentView : View {
     
     @ObjectBinding var agent = Agent()
     
-    let tickets: [Ticket];
+    init(agent:Agent){
+        self.agent = agent;
+    }
     
     var body: some View {
         NavigationView{
@@ -20,11 +22,11 @@ struct ContentView_Previews : PreviewProvider {
     
     static var previews: some View {
         
-        let tickets = Ticket.parse(jsonFile: "Tickets")            
-        
+        //let tickets = Ticket.parse(jsonFile: "Tickets")            
+
         return ForEach(["iPhone XS", "iPhone SE", "iPhone XS Max"].identified(by: \.self)) { deviceName in
             ContentView(
-                tickets:/*[Ticket(), Ticket(), Ticket()]*/ tickets!
+                agent : Agent()
             )
             .previewDevice(PreviewDevice(rawValue: deviceName))
             .previewDisplayName(deviceName)

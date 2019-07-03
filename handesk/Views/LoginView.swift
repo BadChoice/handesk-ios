@@ -4,8 +4,13 @@ struct LoginView : View {
     @State var email:String     = ""
     @State var password:String  = ""
     
+    @State var isLoggedIn = false;
+    @State var agent:Agent?
+    
     var body: some View {
         VStack {
+            Image("Logo").resizable().aspectRatio(contentMode: .fit)
+            Spacer()
             HStack{
                 Text("Email")
                 TextField($email)
@@ -14,10 +19,26 @@ struct LoginView : View {
                 Text("Password")
                 SecureField($password)
             }
-            Button(action: {}) {
+            Button(action: {
+                self.doLogin()
+            }) {
                 Text("Login")
-            }
+            }.padding(.horizontal, 10.0).padding(.vertical, 5.0)
+                .background(Color("Brand")).accentColor(Color.white).cornerRadius(10)
         }.padding()
+        
+        .presentation(isLoggedIn ? Modal(ContentView(agent: agent!)) : nil)
+
+
+    }
+    
+    func doLogin(){
+        Agent.login(email, password: password) { agent in
+            guard (agent != nil) else { return }
+            self.agent = agent;
+            agent?.fetchTickets()
+            self.isLoggedIn = true;
+        }
     }
 }
 

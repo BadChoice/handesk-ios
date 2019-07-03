@@ -2,30 +2,54 @@ import SwiftUI
 import Combine
 
 
-class Agent: BindableObject {
+class Agent: BindableObject, Codable {
     var didChange = PassthroughSubject<Void, Never>()
-    var token     = "agent-token"
     
+    var id        = 1
+    var token     = "agent-token"
+    var name      = ""
+    var email     = ""
+    
+    enum CodingKeys: String, CodingKey {
+        case token, name, email
+    }
     
     var tickets: [Ticket]?
     
     init(){
-        self.fetchTickets()
+        
     }
     
     func fetchTickets(){
         Api(self.token).getTickets() { [weak self] tickets in
-            self?.tickets = tickets;
+            guard tickets != nil else { return }
+            
+            self?.tickets = tickets
             DispatchQueue.main.async {
                 self?.didChange.send(())
             }
         }
     }
     
-    class func login(_ email:String, password: String, completion:(_ agent:Agent?)->Void) {
+    class func login(_ email:String, password: String, completion:@escaping(_ agent:Agent?)->Void) {
         Api.login(email, password: password) { agent in
+            guard agent != nil else { return completion(nil) }
             
+            UserDefaults.standard.set(email, forKey: "email")
+            UserDefaults.standard.set(password, forKey: "password")
+            
+            completion(agent)
         }
+    }
+    
+    class func doSavedLogin(_ completion:@escaping(_ agent:Agent?)->Void) {
+        guard let email = UserDefaults.standard.string(forKey: "email"),
+              let password = UserDefaults.standard.string(forKey: "password") else {
+                return completion(nil)
+        }
+        
+        self.login(email, password: password, completion: completion)
+        
     }
     
 }
