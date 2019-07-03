@@ -3,14 +3,13 @@ import Combine
 
 struct ContentView : View {
     
-    //@ObjectBinding var agent = Agent()
-    var agent = Agent()
+    @ObjectBinding var agent = Agent()
     
     let tickets: [Ticket];
     
     var body: some View {
         NavigationView{
-            TicketsList(tickets: tickets)
+            TicketsList(tickets: agent.tickets ?? [])
         }
     }
 }

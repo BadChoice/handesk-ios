@@ -1,7 +1,10 @@
+import SwiftUI
 import Combine
 
-class Agent/*: BindableObject */{
-    //var didChange = PassthroughSubject<Void, Never>()
+
+class Agent: BindableObject {
+    var didChange = PassthroughSubject<Void, Never>()
+    var token     = "agent-token"
     
     var tickets: [Ticket]?
     
@@ -10,8 +13,11 @@ class Agent/*: BindableObject */{
     }
     
     func fetchTickets(){
-        Api.getTickets() { tickets in
-            self.tickets = tickets;
+        Api(self.token).getTickets() { [weak self] tickets in
+            self?.tickets = tickets;
+            DispatchQueue.main.async {
+                self?.didChange.send(())
+            }
         }
     }
     
