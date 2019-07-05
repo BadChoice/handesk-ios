@@ -5,14 +5,15 @@ struct CommentView : View {
     var body: some View {
         VStack(alignment: .leading){
             HStack{
-                Image("Avatar").resizable().aspectRatio(contentMode: .fit)
-                Text(comment.author.name).font(.subheadline)
+                Image("Avatar").resizable().aspectRatio(contentMode: .fit).frame(width: 30, height:30)
+                Text(comment.author.name).color(Color.gray).font(.subheadline)
                 Spacer()
                 Text(comment.created_at).font(.caption).color(Color.gray)
             }
             Text(comment.body).font(.body).lineLimit(nil)
         }.padding()
         .background(comment.isNote ? Color("Note") : Color.white)
+        
     }
 }
 

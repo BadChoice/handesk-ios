@@ -28,4 +28,12 @@ class TicketComment: Codable, Identifiable{
         self.init()
         self.isPrivate = isPrivate ? 1 : 0
     }
+    
+    convenience init(ticket:Ticket){
+        self.init()
+        self.author = Author(name: ticket.requester?.name ?? "unkown",
+                             email:ticket.requester?.email ?? "unkdown@email.com")
+        self.body = ticket.body;
+        self.created_at = ticket.created_at;
+    }
 }

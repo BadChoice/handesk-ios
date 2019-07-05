@@ -8,4 +8,10 @@ class Author : Codable{
         name = "Batman";
         email = "bruce@wayne.com"
     }
+    
+    convenience init(name:String, email:String){
+        self.init()
+        self.name = name;
+        self.email = email;
+    }
 }

@@ -18,6 +18,11 @@ class Ticket: Codable, Identifiable, BindableObject{
     
     var comments: [TicketComment]?
     
+    var commentsWithBody : [TicketComment] {
+        guard let theComments:[TicketComment] = comments else { return [] }
+        return theComments + [TicketComment(ticket:self)]
+    }
+    
     var issueUrl:String?;
     
     enum CodingKeys: String, CodingKey {
