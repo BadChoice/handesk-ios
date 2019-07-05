@@ -6,8 +6,9 @@ struct CreateCommentView : View {
     
     @State private var newComment: String = "";
     @State private var isPrivate: Bool = false
+    @State private var saving:Bool = false
     
-    //@Environment(\.isPresented) private var isPresented
+    @Environment(\.isPresented) private var isPresented
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -18,10 +19,17 @@ struct CreateCommentView : View {
             TextField("Write your comment...", text: $newComment)
             
             Button(action: {
-                //self.isPresented?.value = false
-            }, label: {
-                Text("Comment").color(Color.white).padding().background(Color("Brand")).cornerRadius(10)
+                self.saving.toggle()
+                self.ticket.postComment(body: self.newComment, isPrivate: self.isPrivate){success in
+                    self.isPresented?.value = false
+                    self.saving.toggle()
+                }
+            }, label: {            Text("Comment").color(Color.white).padding().background(Color("Brand")).cornerRadius(10)
             })
+            
+            if saving {
+                Text("Saving...")
+            }
         }.padding()
     }
 }
