@@ -2,7 +2,6 @@ import SwiftUI
 
 struct TicketDetail : View {
     @ObjectBinding var ticket:Ticket;
-    @State private var composingTicket = false;
     
     var body: some View {
         VStack{
@@ -28,23 +27,17 @@ struct TicketDetail : View {
             self.ticket.fetchComments()
         }
         .navigationBarTitle(Text("#" + "\(ticket.id)"), displayMode: .inline)
-        //.navigationBarItems(trailing: Image(systemName: "square.and.pencil"))
-        .navigationBarItems(trailing: Button(action: {
-                self.composingTicket.toggle()
-            }, label: {
-                Image(systemName: "square.and.pencil")
-            })
-        )
-        .presentation(self.composingTicket ? Modal(CreateCommentView(ticket: self.ticket)) : nil)
+        .navigationBarItems(trailing: TicketDetailRightItems(ticket: self.ticket))
     }
 }
 
-/*struct TicketDetailRightItems : View {
+struct TicketDetailRightItems : View {
+    let ticket: Ticket
     var body : some View {
-        NavigationLink(destination: CreateCommentView(ticket:self.ticket)) { Image(systemName: "square.and.pencil")
+        PresentationLink(destination: CreateCommentView(ticket:self.ticket)) { Image(systemName: "square.and.pencil")
         }
     }
-}*/
+}
 
 #if DEBUG
 struct TicketDetail_Previews : PreviewProvider {

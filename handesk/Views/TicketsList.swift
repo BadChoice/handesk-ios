@@ -5,7 +5,7 @@ struct TicketsList : View {
     
     var body: some View {
         List(tickets) { ticket in
-            NavigationButton(destination: TicketDetail(ticket: ticket), isDetail: true) {
+            NavigationLink(destination: TicketDetail(ticket: ticket)) {
                 TicketRow(ticket: ticket)
             }
         }

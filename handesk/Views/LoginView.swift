@@ -13,11 +13,11 @@ struct LoginView : View {
             Spacer()
             HStack{
                 Text("Email")
-                TextField($email)
+                TextField("Email", text: $email)
             }
             HStack{
                 Text("Password")
-                SecureField($password)
+                SecureField("Password", text: $password)
             }
             Button(action: {
                 self.doLogin()

@@ -4,21 +4,25 @@ struct CreateCommentView : View {
     
     let ticket: Ticket
     
-    @State private var newComment: String = "Write here the new comment";
+    @State private var newComment: String = "";
+    @State private var isPrivate: Bool = false
     
-    @Environment(\.isPresented) private var isPresented
+    //@Environment(\.isPresented) private var isPresented
     
     var body: some View {
-        VStack{
-            Text("Creating comment")
-            TextField($newComment)
+        VStack(alignment: .leading) {
+            Text("New Comment")
+            Toggle(isOn: $isPrivate) {
+                Text("Private")
+            }
+            TextField("Write your comment...", text: $newComment)
             
             Button(action: {
-                self.isPresented?.value = false
+                //self.isPresented?.value = false
             }, label: {
                 Text("Comment").color(Color.white).padding().background(Color("Brand")).cornerRadius(10)
             })
-        }
+        }.padding()
     }
 }
 
