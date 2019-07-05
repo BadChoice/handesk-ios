@@ -12,11 +12,13 @@ struct CreateCommentView : View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text("New Comment")
+            TicketHeader(ticket: self.ticket)
+            Divider()
             Toggle(isOn: $isPrivate) {
                 Text("Private")
             }
             TextField("Write your comment...", text: $newComment)
+                .frame(height:150).multilineTextAlignment(.leading)
             
             Button(action: {
                 self.saving.toggle()
@@ -24,13 +26,31 @@ struct CreateCommentView : View {
                     self.isPresented?.value = false
                     self.saving.toggle()
                 }
-            }, label: {            Text("Comment").color(Color.white).padding().background(Color("Brand")).cornerRadius(10)
+            }, label: {
+                if saving {
+                    ActivityIndicator(isAnimating: .constant(true), style: .medium)
+                }
+                Text("Comment").color(Color.white).padding().background(Color("Brand")).cornerRadius(10)
             })
-            
-            if saving {
-                Text("Saving...")
-            }
+            Spacer()
         }.padding()
+        .navigationBarTitle("New Comment")
+        
+        
+    }
+}
+
+struct ActivityIndicator: UIViewRepresentable {
+    
+    @Binding var isAnimating: Bool
+    let style: UIActivityIndicatorView.Style
+    
+    func makeUIView(context: UIViewRepresentableContext<ActivityIndicator>) -> UIActivityIndicatorView {
+        return UIActivityIndicatorView(style: style)
+    }
+    
+    func updateUIView(_ uiView: UIActivityIndicatorView, context: UIViewRepresentableContext<ActivityIndicator>) {
+        isAnimating ? uiView.startAnimating() : uiView.stopAnimating()
     }
 }
 

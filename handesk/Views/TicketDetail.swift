@@ -5,19 +5,7 @@ struct TicketDetail : View {
     
     var body: some View {
         VStack{
-            VStack{
-                HStack{
-                    Text("#" + "\(ticket.id)")
-                    Text(ticket.requester?.name ?? "Unkwown")
-                    Spacer()
-                    StatusView(status: ticket.status, showFull: true)
-                    PriorityView(priority: ticket.priority, showFull:true)
-                }
-                HStack{
-                    Text(ticket.title).bold().lineLimit(nil)
-                    Spacer()
-                }
-            }.padding(.horizontal)
+            TicketHeader(ticket: self.ticket)
             Divider()
             List(ticket.commentsWithBody) { comment in
                 CommentView(comment: comment)
@@ -30,6 +18,26 @@ struct TicketDetail : View {
         .navigationBarItems(trailing: TicketDetailRightItems(ticket: self.ticket))
     }
 }
+
+struct TicketHeader : View {
+    var ticket:Ticket
+    var body: some View {
+        return VStack{
+            HStack{
+                Text("#" + "\(ticket.id)")
+                Text(ticket.requester?.name ?? "Unkwown")
+                Spacer()
+                StatusView(status: ticket.status, showFull: true)
+                PriorityView(priority: ticket.priority, showFull:true)
+            }
+            HStack{
+                Text(ticket.title).bold().lineLimit(nil)
+                Spacer()
+            }
+        }.padding(.horizontal)
+    }
+}
+
 
 struct TicketDetailRightItems : View {
     let ticket: Ticket
@@ -50,3 +58,4 @@ struct TicketDetail_Previews : PreviewProvider {
     }
 }
 #endif
+

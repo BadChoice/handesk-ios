@@ -59,9 +59,16 @@ class Ticket: Codable, Identifiable, BindableObject{
         guard !body.isEmpty else { return completion(false) }
         
         Api().postComment(self.id,  body: body, isPrivate:isPrivate) { [weak self] commentId in
-            // TODO: Add the comment
-            //ticket.addComment(TicketComment(ticket: <#T##Ticket#>))
+            self?.addComment(TicketComment(ticket: self!, body: body, isPrivate: isPrivate))
             completion(commentId != nil)
+        }
+    }
+    
+    func addComment(_ comment:TicketComment) {
+        self.comments = [comment] + self.comments!
+        
+        DispatchQueue.main.async {
+            self.didChange.send(())
         }
     }
     

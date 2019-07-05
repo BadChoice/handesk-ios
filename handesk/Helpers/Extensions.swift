@@ -17,3 +17,11 @@ extension Ticket {
         
     }
 }
+
+extension Date{
+    func datetimeString() -> String{
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd H:m:s"
+        return formatter.string(from: self)
+    }
+}

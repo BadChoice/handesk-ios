@@ -47,7 +47,7 @@ class Api{
             
             do{
                 let apiResponse = try JSONDecoder().decode(ApiResponse.self, from: response.data)
-                completion(apiResponse.data)
+                completion(apiResponse.data.sorted{ $0.updated_at > $1.updated_at })
             }catch {
                 print(error)
                 completion(nil)
@@ -62,7 +62,8 @@ class Api{
             
             do{
                 let apiResponse = try JSONDecoder().decode(CommentsResponse.self, from: response.data)
-                completion(apiResponse.data)
+                completion(apiResponse.data.sorted { $0.created_at > $1.created_at })
+                
             }catch {
                 print(error)
                 completion(nil)

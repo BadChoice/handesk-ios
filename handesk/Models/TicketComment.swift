@@ -36,4 +36,13 @@ class TicketComment: Codable, Identifiable{
         self.body = ticket.body;
         self.created_at = ticket.created_at;
     }
+    
+    convenience init(ticket:Ticket, body:String, isPrivate:Bool){
+        self.init()
+        self.author = Author(name: ticket.requester?.name ?? "unkown",
+                             email:ticket.requester?.email ?? "unkdown@email.com")
+        self.body = body;
+        self.isPrivate = isPrivate ? 1 : 0
+        self.created_at = Date().datetimeString();
+    }
 }
