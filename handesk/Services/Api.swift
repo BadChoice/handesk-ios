@@ -14,6 +14,11 @@ struct CommentsResponse: Codable{
     let data : [TicketComment]
 }
 
+struct IdResponse: Codable{
+    let data : [String: Int]
+}
+
+
 
 class Api{
     
@@ -58,6 +63,21 @@ class Api{
             do{
                 let apiResponse = try JSONDecoder().decode(CommentsResponse.self, from: response.data)
                 completion(apiResponse.data)
+            }catch {
+                print(error)
+                completion(nil)
+            }
+        }
+    }
+    
+    func postComment(_ agentId:Int, _ ticketId: Int, body:String, isPrivate:Bool, _ completion:@escaping(_ commentId:Int?) -> Void){
+        HTTP.POST(Api.URL + "tickets/" + String(ticketId) + "/comments" , parameters: ["user_id": agentId, "body" : body, "private": isPrivate], headers: self.authHeaders()){ response in
+            let jsonString = String(data: response.data, encoding: .utf8)
+            debugPrint(jsonString!)
+            
+            do{
+                let apiResponse = try JSONDecoder().decode(IdResponse.self, from: response.data)
+                completion(apiResponse.data["id"])
             }catch {
                 print(error)
                 completion(nil)

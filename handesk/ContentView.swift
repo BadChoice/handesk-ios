@@ -14,6 +14,7 @@ struct ContentView : View {
             TicketsList(tickets: agent.tickets ?? [])
             .navigationBarTitle(Text("Tickets"))
         }
+        
     }
 }
 

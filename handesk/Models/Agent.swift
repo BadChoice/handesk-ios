@@ -31,6 +31,13 @@ class Agent: BindableObject, Codable {
         }
     }
     
+    func postComment(ticket:Ticket, body:String, isPrivate:Bool){
+        Api().postComment(self.id, ticket.id,  body: body, isPrivate:isPrivate) { [weak self] comments in
+            // TODO: Add the comment
+            //ticket.addComment(TicketComment(ticket: <#T##Ticket#>))
+        }
+    }
+    
     class func login(_ email:String, password: String, completion:@escaping(_ agent:Agent?)->Void) {
         Api.login(email, password: password) { agent in
             guard agent != nil else { return completion(nil) }

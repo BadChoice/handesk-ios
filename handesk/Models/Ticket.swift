@@ -54,4 +54,5 @@ class Ticket: Codable, Identifiable, BindableObject{
             }
         }
     }
+    
 }
