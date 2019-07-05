@@ -3,12 +3,22 @@ import SwiftUI
 struct CreateCommentView : View {
     
     let ticket: Ticket
+    
     @State private var newComment: String = "Write here the new comment";
     
+    @Environment(\.isPresented) private var isPresented
+    
     var body: some View {
-        Text("Creating comment")
-//        TextField(newComment)
-        
+        VStack{
+            Text("Creating comment")
+            TextField($newComment)
+            
+            Button(action: {
+                self.isPresented?.value = false
+            }, label: {
+                Text("Comment").color(Color.white).padding().background(Color("Brand")).cornerRadius(10)
+            })
+        }
     }
 }
 
