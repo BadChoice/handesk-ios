@@ -1,6 +1,6 @@
 import SwiftUI
 
-enum Status : Int, Codable {
+enum Status : Int, CaseIterable, Codable {
     case new     = 1;
     case open    = 2;
     case pending = 3;

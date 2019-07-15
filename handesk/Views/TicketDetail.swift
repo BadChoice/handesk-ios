@@ -5,12 +5,12 @@ struct TicketDetail : View {
     
     var body: some View {
         VStack{
-            TicketHeader(ticket: self.ticket)
+            TicketHeader(ticket: self.ticket).padding(.top, 10)
             Divider()
             List(ticket.commentsWithBody) { comment in
                 CommentView(comment: comment)
-            }.padding(.horizontal, -12)
-        }.padding(.top, 10)
+            }.padding(.horizontal, -20)
+        }
         .onAppear {
             self.ticket.fetchComments()
         }
@@ -27,8 +27,8 @@ struct TicketHeader : View {
                 Text("#" + "\(ticket.id)")
                 Text(ticket.requester?.name ?? "Unkwown")
                 Spacer()
-                StatusView(status: ticket.status, showFull: true)
-                PriorityView(priority: ticket.priority, showFull:true)
+                StatusView(status: ticket.status, size: 2)
+                PriorityView(priority: ticket.priority, size:2)
             }
             HStack{
                 Text(ticket.title).bold().lineLimit(nil)

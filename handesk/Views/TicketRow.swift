@@ -5,21 +5,25 @@ struct TicketRow : View {
     
     var body: some View {
         
-        VStack{
-            HStack {
-                Text(ticket.title).font(.subheadline).bold()
-                Spacer()
-                StatusView(status: ticket.status)
-                PriorityView(priority: ticket.priority)
+        HStack{
+            VStack{
+                StatusView(status: ticket.status, size:0).padding(.bottom, 0)
+                PriorityView(priority: ticket.priority, size:0)
             }
-            Spacer()
-            HStack{
-                Text(ticket.requester?.name ?? "Unknown").font(.footnote)
-                Spacer()
-                Text(ticket.updated_at).font(.caption).color(Color.gray)
+            VStack{
+                HStack {
+                    Text(ticket.title).font(.subheadline).bold()
+                    Spacer()
+                    Text(ticket.updated_at).font(.caption).color(Color.gray)
+                }
+                //Spacer()
+                HStack{
+                    Text(ticket.requester?.name ?? "Unknown").font(.footnote)
+                    Spacer()
+                    
+                }
             }
-        }.padding()
-        
+        }
     }
 }
 

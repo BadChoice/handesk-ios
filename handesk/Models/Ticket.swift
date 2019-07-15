@@ -55,10 +55,11 @@ class Ticket: Codable, Identifiable, BindableObject{
         }
     }
     
-    func postComment(body:String, isPrivate:Bool, completion:@escaping (_ success:Bool) -> Void){
+    
+    func postComment(body:String, isPrivate:Bool, newStatus:Status, completion:@escaping (_ success:Bool) -> Void){
         guard !body.isEmpty else { return completion(false) }
         
-        Api().postComment(self.id,  body: body, isPrivate:isPrivate) { [weak self] commentId in
+        Api().postComment(self.id,  body: body, isPrivate:isPrivate, newStatus:newStatus) { [weak self] commentId in
             self?.addComment(TicketComment(ticket: self!, body: body, isPrivate: isPrivate))
             completion(commentId != nil)
         }

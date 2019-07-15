@@ -4,39 +4,59 @@ struct CreateCommentView : View {
     
     let ticket: Ticket
     
-    @State private var newComment: String = "";
-    @State private var isPrivate: Bool = false
-    @State private var saving:Bool = false
+    @State private var newComment: String   = "";
+    @State private var isPrivate: Bool      = false
+    @State private var saving:Bool          = false
+    @State private var newStatus:Status     = .pending;
     
-    @Environment(\.isPresented) private var isPresented
+    @Environment(\.isPresented) var isPresented: Binding<Bool>?
     
     var body: some View {
         VStack(alignment: .leading) {
-            TicketHeader(ticket: self.ticket)
-            Divider()
-            Toggle(isOn: $isPrivate) {
-                Text("Private")
-            }
-            TextField("Write your comment...", text: $newComment)
-                .frame(height:150).multilineTextAlignment(.leading)
             
-            Button(action: {
-                self.saving.toggle()
-                self.ticket.postComment(body: self.newComment, isPrivate: self.isPrivate){success in
-                    self.isPresented?.value = false
-                    self.saving.toggle()
+            TicketHeader(ticket: self.ticket).padding()
+            
+            Form{
+                
+                Toggle(isOn: $isPrivate) {
+                    Text("Private")
                 }
-            }, label: {
-                if saving {
-                    ActivityIndicator(isAnimating: .constant(true), style: .medium)
+                Picker(selection: $newStatus, label: Text("Status")) {
+                    ForEach(Status.allCases.identified(by: \.self)) {
+                        Text($0.name()).tag($0)
+                    }
                 }
-                Text("Comment").color(Color.white).padding().background(Color("Brand")).cornerRadius(10)
-            })
-            Spacer()
-        }.padding()
+                TextField("Write your comment...", text: $newComment)
+                    .frame(height:150).multilineTextAlignment(.leading)
+                
+                Section{
+                    HStack{
+                        Spacer()
+                        Button(action: {
+                            self.postComment()
+                        }, label: {
+                            if saving {
+                                ActivityIndicator(isAnimating: .constant(true), style: .medium)
+                            }
+                        Text("Comment")
+                            .color(Color.white).padding()
+                            .background(Color("Brand")).cornerRadius(10)
+                        })
+                        Spacer()
+                    }
+                }
+            }
+
+        }
         .navigationBarTitle("New Comment")
-        
-        
+    }
+    
+    func postComment(){
+        self.saving.toggle()
+        self.ticket.postComment(body: self.newComment, isPrivate: self.isPrivate, newStatus: self.newStatus){success in
+            self.isPresented?.value = false
+            self.saving.toggle()
+        }
     }
 }
 

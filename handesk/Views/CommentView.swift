@@ -10,7 +10,7 @@ struct CommentView : View {
                 Spacer()
                 Text(comment.created_at).font(.caption).color(Color.gray)
             }
-            Text(comment.body).font(.body).lineLimit(nil)
+            Text(comment.body).font(.callout).lineLimit(nil)
         }.padding()
         .background(comment.isNote ? Color("Note") : Color.white)
         

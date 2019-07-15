@@ -71,8 +71,8 @@ class Api{
         }
     }
     
-    func postComment(_ ticketId: Int, body:String, isPrivate:Bool, _ completion:@escaping(_ commentId:Int?) -> Void){
-        HTTP.POST(Api.URL + "tickets/" + String(ticketId) + "/comments" , parameters: ["body" : body, "private": isPrivate], headers: self.authHeaders()){ response in
+    func postComment(_ ticketId: Int, body:String, isPrivate:Bool, newStatus:Status, _ completion:@escaping(_ commentId:Int?) -> Void){
+        HTTP.POST(Api.URL + "tickets/" + String(ticketId) + "/comments" , parameters: ["body" : body, "private": isPrivate, "new_status" : newStatus.rawValue], headers: self.authHeaders()){ response in
             let jsonString = String(data: response.data, encoding: .utf8)
             debugPrint(jsonString!)
             
