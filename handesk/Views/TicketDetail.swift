@@ -42,7 +42,7 @@ struct TicketHeader : View {
 struct TicketDetailRightItems : View {
     let ticket: Ticket
     var body : some View {
-        PresentationLink(destination: CreateCommentView(ticket:self.ticket)) {
+        PresentationLink(destination: ComposeCommentView(ticket:self.ticket)) {
             Image(systemName: "square.and.pencil")
         }
     }

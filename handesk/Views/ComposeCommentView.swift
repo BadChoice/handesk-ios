@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct CreateCommentView : View {
+struct ComposeCommentView : View {
     
     let ticket: Ticket
     
@@ -9,7 +9,7 @@ struct CreateCommentView : View {
     @State private var saving:Bool          = false
     @State private var newStatus:Status     = .pending;
     
-    @Environment(\.isPresented) var isPresented: Binding<Bool>?
+     @Environment(\.isPresented) var isPresented: Binding<Bool>?
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -17,7 +17,6 @@ struct CreateCommentView : View {
             TicketHeader(ticket: self.ticket).padding()
             
             Form{
-                
                 Toggle(isOn: $isPrivate) {
                     Text("Private")
                 }
@@ -27,7 +26,7 @@ struct CreateCommentView : View {
                     }
                 }
                 TextField("Write your comment...", text: $newComment)
-                    .frame(height:150).multilineTextAlignment(.leading)
+                    .frame(height:150).multilineTextAlignment(.leading).lineLimit(nil)
                 
                 Section{
                     HStack{
@@ -77,7 +76,7 @@ struct ActivityIndicator: UIViewRepresentable {
 #if DEBUG
 struct CreateCommentView_Previews : PreviewProvider {
     static var previews: some View {
-        CreateCommentView(ticket:Ticket())
+        ComposeCommentView(ticket:Ticket())
     }
 }
 #endif

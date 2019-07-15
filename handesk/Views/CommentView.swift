@@ -5,7 +5,7 @@ struct CommentView : View {
     var body: some View {
         VStack(alignment: .leading){
             HStack{
-                Image("Avatar").resizable().aspectRatio(contentMode: .fit).frame(width: 30, height:30)
+                Gravatar(email: comment.author.email)
                 Text(comment.author.name).color(Color.gray).font(.subheadline)
                 Spacer()
                 Text(comment.created_at).font(.caption).color(Color.gray)
