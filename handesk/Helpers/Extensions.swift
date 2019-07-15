@@ -1,5 +1,6 @@
 import Foundation
 import CryptoKit
+import UIKit
 
 extension Ticket {
     static func parse(jsonFile: String) -> [Ticket]? {
@@ -46,5 +47,25 @@ extension String {
         return digest.map {
             String(format: "%02hhx", $0)
         }.joined()
+    }
+    
+    func gravatar(_ completion:@escaping(_ image:UIImage) -> Void) {
+        let gravatarURL = "https://www.gravatar.com/avatar/" +
+            self.md5() +
+            "?s=50&d=" +
+        "https://raw.githubusercontent.com/BadChoice/handesk/master/public/images/default-avatar.png";
+        
+        guard let url = URL(string: gravatarURL) else {
+            debugPrint("Invalid url")
+            return;
+        }
+        
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let data = data, let image = UIImage(data: data) {
+                completion(image)
+            } else {
+                debugPrint("Error :\(String(describing:error))")
+            }
+        }.resume()
     }
 }
