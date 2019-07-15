@@ -16,6 +16,19 @@ class Agent: BindableObject, Codable {
     
     var tickets: [Ticket]?
     
+    var myTickets: [Ticket]?{
+        tickets?.filter{ $0.user_id == self.id}
+    }
+    
+    var ticketsEscalated:[Ticket]?{
+        tickets?.filter{ $0.level == 1}
+    }
+    
+    var unassignedTickets:[Ticket]?{
+        tickets?.filter{ $0.user_id == nil}
+    }
+    
+    
     init(){
         
     }

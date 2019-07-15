@@ -15,6 +15,7 @@ class Ticket: Codable, Identifiable, BindableObject{
     var priority: Priority
     var ticket_type_id: Int?
     var requester: Requester?
+    var level:Int
     
     var comments: [TicketComment]?
     
@@ -26,7 +27,7 @@ class Ticket: Codable, Identifiable, BindableObject{
     var issueUrl:String?;
     
     enum CodingKeys: String, CodingKey {
-        case id, title, body, requester_id, user_id, status, priority, ticket_type_id, requester, comments, created_at, updated_at
+        case id, title, body, requester_id, user_id, status, priority, ticket_type_id, requester, comments, created_at, updated_at, level
     }
     
     //https://benscheirman.com/2017/06/swift-json/    
@@ -44,6 +45,7 @@ class Ticket: Codable, Identifiable, BindableObject{
         created_at      = "2019-08-08 12:55:55"
         updated_at      = "2019-08-08 12:55:55"
         requester       = Requester()
+        level           = 0
     }
     
     func fetchComments(){

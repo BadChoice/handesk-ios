@@ -11,7 +11,20 @@ struct ContentView : View {
     
     var body: some View {
         NavigationView{
-            TicketsList(tickets: agent.tickets ?? [])
+            TabbedView{
+                TicketsList(tickets: agent.tickets ?? []).tabItem({
+                    Text("All")
+                }).tag(0)
+                TicketsList(tickets: agent.myTickets ?? []).tabItem({
+                    Text("Mine")
+                }).tag(1)
+                TicketsList(tickets: agent.ticketsEscalated ?? []).tabItem({
+                    Text("Escalated")
+                }).tag(2)
+                TicketsList(tickets: agent.unassignedTickets ?? []).tabItem({
+                    Text("Unassigned")
+                }).tag(3)
+            }
             .navigationBarTitle(Text("Tickets"))
         }
         

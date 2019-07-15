@@ -1,4 +1,5 @@
 import Foundation
+//import SwiftUI
 
 extension Ticket {
     static func parse(jsonFile: String) -> [Ticket]? {
@@ -25,3 +26,12 @@ extension Date{
         return formatter.string(from: self)
     }
 }
+
+/*extension Color{
+    func luminance() -> CGFloat {
+        //var red: CGFloat = 0, green: CGFloat = 0, blue: CGFloat = 0, alpha: CGFloat = 0 ;
+        //self.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
+        let luminance = (self.red / 255.0) * 0.3 + (self.green / 255.0) * 0.59 + (self.blue / 255.0) * 0.11;
+        return luminance * 100;
+    }
+}*/
