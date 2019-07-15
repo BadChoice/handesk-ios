@@ -13,15 +13,19 @@ struct ContentView : View {
         NavigationView{
             TabbedView{
                 TicketsList(tickets: agent.tickets ?? []).tabItem({
+                    Image(systemName: "tray.full.fill")
                     Text("All")
                 }).tag(0)
                 TicketsList(tickets: agent.myTickets ?? []).tabItem({
+                    Image(systemName: "person.fill")
                     Text("Mine")
                 }).tag(1)
                 TicketsList(tickets: agent.ticketsEscalated ?? []).tabItem({
+                    Image(systemName: "flame.fill")
                     Text("Escalated")
                 }).tag(2)
                 TicketsList(tickets: agent.unassignedTickets ?? []).tabItem({
+                    Image(systemName: "exclamationmark.triangle.fill")
                     Text("Unassigned")
                 }).tag(3)
             }
