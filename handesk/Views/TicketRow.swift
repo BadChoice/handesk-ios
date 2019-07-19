@@ -14,7 +14,7 @@ struct TicketRow : View {
                 HStack {
                     Text(ticket.title).font(.subheadline).bold()
                     Spacer()
-                    Text(ticket.updated_at).font(.caption).color(Color.gray)
+                    Text(ticket.updated_at).font(.caption).foregroundColor(Color.gray)
                 }
                 //Spacer()
                 HStack{

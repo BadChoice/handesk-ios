@@ -3,7 +3,8 @@ import Combine
 
 
 class Agent: BindableObject, Codable {
-    var didChange = PassthroughSubject<Void, Never>()
+    
+    var willChange = PassthroughSubject<Void, Never>()
     
     var id        = 1
     var token     = "agent-token"
@@ -39,7 +40,7 @@ class Agent: BindableObject, Codable {
             
             self?.tickets = tickets
             DispatchQueue.main.async {
-                self?.didChange.send(())
+                self?.willChange.send(())
             }
         }
     }

@@ -4,7 +4,7 @@ import Combine
 
 class Ticket: Codable, Identifiable, BindableObject{
     
-    var didChange = PassthroughSubject<Void, Never>()
+    var willChange = PassthroughSubject<Void, Never>()
     
     let id: Int
     var title: String
@@ -52,7 +52,7 @@ class Ticket: Codable, Identifiable, BindableObject{
         Api().getTicketComments(self.id) { [weak self] comments in
             self?.comments = comments;
             DispatchQueue.main.async {
-                self?.didChange.send(())
+                self?.willChange.send(())
             }
         }
     }
@@ -71,7 +71,7 @@ class Ticket: Codable, Identifiable, BindableObject{
         self.comments = [comment] + self.comments!
         
         DispatchQueue.main.async {
-            self.didChange.send(())
+            self.willChange.send(())
         }
     }
     
