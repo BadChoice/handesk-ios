@@ -26,8 +26,10 @@ struct LoginView : View {
             }.padding(.horizontal, 10.0).padding(.vertical, 5.0)
                 .background(Color("Brand")).accentColor(Color.white).cornerRadius(10)
         }.padding()
-        
-        .presentation(isLoggedIn ? Modal(ContentView(agent: agent!)) : nil)
+        .sheet(isPresented: $isLoggedIn, content: {
+            ContentView(agent: self.agent!)
+            
+        })
 
 
     }

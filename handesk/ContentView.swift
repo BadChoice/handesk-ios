@@ -42,7 +42,7 @@ struct ContentView_Previews : PreviewProvider {
         
         //let tickets = Ticket.parse(jsonFile: "Tickets")            
 
-        return ForEach(["iPhone XS", "iPhone SE", "iPhone XS Max"].identified(by: \.self)) { deviceName in
+        return ForEach(["iPhone XS", "iPhone SE", "iPhone XS Max"], id: \.self) { deviceName in
             ContentView(
                 agent : Agent()
             )

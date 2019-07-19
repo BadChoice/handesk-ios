@@ -21,7 +21,7 @@ struct ComposeCommentView : View {
                     Text("Private")
                 }
                 Picker(selection: $newStatus, label: Text("Status")) {
-                    ForEach(Status.allCases.identified(by: \.self)) {
+                    ForEach(Status.allCases, id:\.self) {
                         Text($0.name()).tag($0)
                     }
                 }
@@ -38,7 +38,7 @@ struct ComposeCommentView : View {
                                 ActivityIndicator(isAnimating: .constant(true), style: .medium)
                             }
                         Text("Comment")
-                            .color(Color.white).padding()
+                            .foregroundColor(Color.white).padding()
                             .background(Color("Brand")).cornerRadius(10)
                         })
                         Spacer()

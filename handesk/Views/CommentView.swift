@@ -6,9 +6,9 @@ struct CommentView : View {
         VStack(alignment: .leading){
             HStack{
                 Gravatar(email: comment.author.email)
-                Text(comment.author.name).color(Color.gray).font(.subheadline)
+                Text(comment.author.name).foregroundColor(Color.gray).font(.subheadline)
                 Spacer()
-                Text(comment.created_at).font(.caption).color(Color.gray)
+                Text(comment.created_at).font(.caption).foregroundColor(Color.gray)
             }
             Text(comment.body).font(.callout).lineLimit(nil)
         }.padding()
